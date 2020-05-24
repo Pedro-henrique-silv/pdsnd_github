@@ -272,9 +272,6 @@ def user_stats(df):
     """Displays statistics on bikeshare users."""
 
     print('\nCalculating User Stats...\n')
-    import time
-    import pandas as pd
-    import numpy as np
 
     start_time = time.time()
 
@@ -359,7 +356,6 @@ def main():
         print("Filters:\n   city = {}\n   month = {}\n   day = {}\n".format(city, month, day))
         print('-'*40)
         df = load_data(city, month, day)
-        df_orig = df
 
         time_stats(df, month, day)
         station_stats(df)
