@@ -281,8 +281,6 @@ def user_stats(df):
 
     for aux_stats_var in stats_var:
         try:
-            #change NaN to 'Not informed' to help print Output
-            #df[aux_stats_var].fillna('Not informed', inplace=True)
 
             #create an aux frame to help to print results
             aux_count = df[aux_stats_var].fillna('Not informed').value_counts()
@@ -366,7 +364,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
+
         i = 0;
         print_data = ''
         while print_data != 'no':
@@ -380,13 +378,13 @@ def main():
                     pprint(df.iloc[i,0:-4].to_dict())
                     #print('\n')
                     i += 1
-            
-        
+
+
         restart = input('\nWould you like to restart? Enter yes or no.\n    ').lower()
         while restart not in ('yes' 'no'):
             print("    '{}' is not a valid option".format(restart))
             restart = input('\nWould you like to restart? Enter yes or no.\n    ').lower()
-            
+
         if restart == 'no':
             break
 
