@@ -175,6 +175,7 @@ def station_stats(df):
 
     start_time = time.time()
 
+    #create a new collumn with a concatenation that shows the path that user took
     df['Trip'] = df['Start Station'] + ' to ' + df['End Station']
 
     list_station_options = ['Start Station', 'End Station', 'Trip']
